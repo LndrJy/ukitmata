@@ -1,0 +1,27 @@
+# BIR Form 2307 — Certificate of Creditable Tax Withheld at Source
+key: BIR_2307
+name: "BIR Form 2307 — Certificate of Creditable Tax Withheld at Source"
+keywords:
+  - "2307"
+  - "certificate of creditable tax"
+  - "creditable withholding"
+fields:
+  - "Period From"
+  - "Period To"
+  - "Payee TIN"
+  - "Payee's Name"
+  - "Payee Registered Address"
+  - "Payee Zip Code"
+  - "Payor TIN"
+  - "Payor's Name"
+  - "Payor Registered Address"
+  - "Payor Zip Code"
+  - "Nature of Income Payment"
+  - "ATC"
+  - "1st Month Amount"
+  - "2nd Month Amount"
+  - "3rd Month Amount"
+  - "Total"
+  - "Tax Rate"
+  - "Tax Required to be Withheld"
+  - "Tax Withheld for the Quarter"

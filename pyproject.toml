@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ukitmata"
+version = "0.1.0"
+description = "Local intelligent form digitization — reads handwritten government documents, structures the data, and learns from human corrections."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [{ name = "UkitMata Team" }]
+
+dependencies = [
+    # Vision + logic engines
+    "transformers>=4.45",
+    "accelerate>=0.34",
+    "qwen-vl-utils>=0.0.8",
+    "torch>=2.2",
+    "torchvision>=0.17",
+    "langchain>=0.3",
+    "langchain-ollama>=0.2",
+    # Image + data
+    "opencv-python-headless>=4.9",
+    "pillow>=10.0",
+    "numpy>=1.26",
+    "pyyaml>=6.0",
+    # Service layer
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "python-multipart>=0.0.9",
+    "pydantic>=2.7",
+    "requests>=2.31",
+    # Workstation UI
+    "gradio>=4.44",
+]
+
+[project.optional-dependencies]
+# Optional handwriting second-opinion engine (TrOCR). Off by default.
+htr = ["sentencepiece>=0.2"]
+# Fine-tuning (the "self-learning" loop). Run offline on the training box.
+train = ["peft>=0.12", "datasets>=2.20", "bitsandbytes>=0.43"]
+dev = ["pytest>=8.0", "ruff>=0.6", "black>=24.0"]
+
+[project.scripts]
+ukitmata-ui = "ukitmata.ui.app:main"
+ukitmata-api = "ukitmata.api.main:main"
+
+[tool.setuptools.packages.find]
+include = ["ukitmata*"]
+
+[tool.setuptools.package-data]
+ukitmata = ["schemas/forms/*.yaml"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.black]
+line-length = 100

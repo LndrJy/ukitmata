@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# UkitMata runtime data — documents, db, datasets, trained adapters
+# (Keep these OUT of git; they are runtime/PII assets, not source.)
+data/
+*.db
+*.sqlite3
+adapters/
+*.pth
+
+# Model caches
+.cache/
+hf_cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+ollama_output.log
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
