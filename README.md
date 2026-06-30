@@ -10,11 +10,7 @@ from human corrections — all running on your own hardware, no cloud calls.
 |--------|-------|------|
 | Vision | `Imgscope-OCR-2B` (Qwen2-VL) | Reads the form (printed + handwriting) |
 | Logic  | `Llama 3.1 8B` (via Ollama)   | Cleans & structures the raw OCR text |
-| HTR *(optional)* | `microsoft/trocr-base-handwritten` | Second-opinion on low-confidence handwriting |
-
-> The old EMNIST per-character CNN was removed — the VLM reads handwriting natively and
-> better. TrOCR is available as an optional, targeted cross-check (`UKIT_HTR=1`).
-
+| HTR *(optional)* | `microsoft/trocr-base-handwritten` | Second-opinion on low-confidence handwriting 
 ## Architecture
 
 ```
